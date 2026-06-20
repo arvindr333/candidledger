@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<section class="page-hero">
+
+    <div class="page-content">
+
+        <h1>Tax Updates</h1>
+
+        <p>
+            Stay updated with the latest GST,
+            Income Tax, TDS and compliance news.
+        </p>
+
+    </div>
+
+</section>
+
+<section class="blog-section">
+
+    <div class="section-header">
+
+        <h2>Latest Tax Updates</h2>
+
+        <p>
+            Important announcements, filing reminders
+            and tax insights from Candid Ledger.
+        </p>
+
+    </div>
+
+    <div class="blog-grid">
+
+        {% for post in posts %}
+
+        <article class="blog-card">
+
+            {% if post.image %}
+            <div class="blog-image">
+                <img src="{{ post.image.url }}" alt="{{ post.title }}">
+            </div>
+            {% endif %}
+
+            <div class="blog-content">
+
+                <span class="blog-date">
+                    <i class="fas fa-calendar-alt"></i>
+                    {{ post.created_at|date:"d M Y" }}
+                </span>
+
+                <h3>{{ post.title }}</h3>
+
+                <p class="short-desc">
+                    {{ post.short_description }}
+                </p>
+
+                <div class="full-content">
+                    {{ post.content|linebreaks }}
+                </div>
+
+            </div>
+
+        </article>
+
+        {% empty %}
+
+        <div class="no-posts">
+
+            <h3>No Tax Updates Available</h3>
+
+            <p>
+                Latest tax updates will be published soon.
+            </p>
+
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}
+

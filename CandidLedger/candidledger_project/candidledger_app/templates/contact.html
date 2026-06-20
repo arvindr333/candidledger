@@ -1,0 +1,221 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact Us | Candid Ledger{% endblock %}
+
+{% block content %}
+
+<section class="page-hero">
+
+
+<div class="page-content">
+
+    <h1>Contact Us</h1>
+
+    <p>
+        Get in touch with our experts for
+        accounting and tax solutions.
+    </p>
+
+</div>
+
+
+</section>
+
+<section class="contact-info">
+
+<div class="contact-card">
+
+    <i class="fas fa-phone"></i>
+
+    <h3>Call Us</h3>
+
+    <p>+91 9400224905</p>
+    <p>+91 8547001191</p>
+
+</div>
+
+<div class="contact-card">
+
+    <i class="fas fa-envelope"></i>
+
+    <h3>Email Us</h3>
+
+    <p>candidledger@gmail.com</p>
+
+</div>
+
+<div class="contact-card">
+
+    <i class="fas fa-location-dot"></i>
+
+    <h3>Office Address</h3>
+
+    <p>Your Office Address Here</p>
+
+</div>
+
+
+</section>
+
+<section class="contact-section">
+
+
+<div class="contact-container">
+
+    <div class="contact-left">
+
+        <h2>Send Us A Message</h2>
+
+        <p>
+            Have questions regarding GST,
+            Income Tax, Accounting or Business
+            Registration? Contact us today.
+        </p>
+
+   <form method="POST">
+    {% csrf_token %}
+
+<input type="hidden" name="form_type" value="enquiry">
+
+    <input type="text" name="name" placeholder="Full Name" required>
+
+    <input type="email" name="email" placeholder="Email Address" required>
+
+    <input type="tel" name="phone" placeholder="Phone Number" required>
+
+    <select name="service">
+        <option value="">Select Service</option>
+        <option value="GST Filing">GST Filing</option>
+        <option value="Income Tax Filing">Income Tax Filing</option>
+        <option value="Accounting">Accounting</option>
+        <option value="TDS Filing">TDS Filing</option>
+        <option value="Business Registration">Business Registration</option>
+    </select>
+
+    <textarea name="message" rows="6"
+        placeholder="Your Message"></textarea>
+
+    <button type="submit" class="btn-primary">
+        Send Message
+    </button>
+ 
+
+    </form>
+
+    
+
+
+    </div>
+
+    <div class="contact-right">
+
+        <div class="contact-box">
+
+            <h3>Business Hours</h3>
+
+            <p>Monday - Saturday</p>
+            <p>09:00 AM - 06:00 PM</p>
+
+        </div>
+
+        <div class="contact-box">
+
+            <h3>Quick Support</h3>
+
+            <p>WhatsApp: +91 9400224905</p>
+
+            <p>Email: candidledger@gmail.com</p>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+</section>
+
+<section class="map-section">
+
+
+<iframe
+    src="https://www.google.com/maps/embed?pb="
+    allowfullscreen=""
+    loading="lazy">
+</iframe>
+
+
+</section>
+
+<section class="cta">
+
+
+<h2>Need Immediate Assistance?</h2>
+
+<p>Talk to our experts today.</p>
+
+<a href="https://wa.me/919400224905" class="btn-primary">
+    WhatsApp Us
+</a>
+
+
+
+</section>
+
+<section class="feedbacks-section">
+
+    <div class="contact-container">
+
+        <div class="contact-left">
+
+            <h2>Share Your Feedback</h2>
+
+            <p>
+                We value your feedback and suggestions.
+                Tell us about your experience with Candid Ledger.
+            </p>
+
+          
+    <form method="POST">
+    {% csrf_token %}
+
+    <input type="hidden"
+           name="form_type"
+           value="feedback">
+
+    <input type="text"
+           name="feedback_name"
+           placeholder="Your Name"
+           required>
+
+    <input type="email"
+           name="feedback_email"
+           placeholder="Email Address">
+
+    <textarea
+        name="feedback_message"
+        rows="6"
+        placeholder="Write your feedback here"
+        required></textarea>
+
+    <button type="submit" class="btn-primary">
+        Submit Feedback
+    </button>
+</form>
+
+
+
+
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+{% endblock %}
